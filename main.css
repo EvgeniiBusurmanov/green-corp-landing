@@ -32,6 +32,10 @@ button {
     box-shadow: 0 16px 36px rgb(52, 213, 68 / 22%);
     padding: 15px;
 }
+.about__images {
+    display: grid;
+    grid-template-columns: 100px 500px;
+}
 .about__image {
     width: 500px;
 }
@@ -67,4 +71,95 @@ button {
 }
 .about__info {
     max-width: 550px;
+}
+.form__container {
+    width: 550px;
+}
+.form {
+    background-color: #1D263A;
+    color: #fff;
+    padding-top: 115px;
+    padding-bottom: 115px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.form h1 {
+    height: 48px;
+}
+.form p {
+    height: 18px;
+    opacity: 0.65;
+}
+.form__group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    grid-gap: 20px;
+}
+.form form {
+    display: grid;
+    margin-top: 60px;
+    grid-gap: 20px;
+}
+.form label {
+    font-size: 18px;
+    font-weight: 600;
+}
+.form input {
+    font-size: 18px;
+    color: #213053;
+    height: 60px;
+    padding: 0px 20px 0px 20px;
+    border-radius: 15px;
+    border: none;
+}
+.form select {
+    font-size: 18px;
+    color: #213053;
+    height: 60px;
+    padding: 0px 20px 0px 20px;
+    border-radius: 15px;
+    border: none;
+}
+.form__submit {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 40px;
+}
+.select {
+    appearance: none;
+}
+.input {
+    outline: none;
+}
+button:hover {
+    background-color: #f6980c;
+    box-shadow:  16px 36px rgba(246, 152, 12 / 20%);
+    transition: background-color 0.3s ease-in;
+}
+footer {
+    padding: 90px 20px 90px 20px;
+}
+.footer__container {
+    display: flex;
+    justify-content: center;    
+}
+.footer__copyright p {
+    margin-top: 40px;
+    text-align: center;
+    opacity: 0.5;
+}
+.footer__group {
+    margin-right: 80px;
+}
+.footer__container h3 {
+    size: 30px;
+    opacity: 0.7;
+    margin-bottom: 30px;
+}
+.footer__links a {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
 }
