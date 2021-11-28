@@ -8,6 +8,10 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1;
 }
 .header__logo {
     height: 30px;
@@ -31,10 +35,12 @@ button {
     cursor: pointer;
     box-shadow: 0 16px 36px rgb(52, 213, 68 / 22%);
     padding: 15px;
+    display: flex;
 }
-.about__images {
-    display: grid;
-    grid-template-columns: 100px 500px;
+.chevron-right {
+    margin-left: 7px;
+    font-size: 15px;
+    align-items: center;
 }
 .about__image {
     width: 500px;
@@ -42,6 +48,12 @@ button {
 .about__sun-image {
     width: 100px;
     height: 100px;
+    animation-name: rotation;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    position: absolute;
+
 }
 .about {
     display: flex;
@@ -85,17 +97,17 @@ button {
     justify-content: center;
 }
 .form h1 {
-    height: 48px;
+    font-size: 48px;
 }
 .form p {
-    height: 18px;
+    font-size: 18px;
     opacity: 0.65;
 }
 .form__group {
     display: flex;
     flex-direction: column;
     text-align: left;
-    grid-gap: 20px;
+    grid-gap: 20px; /*добавил от себя так как отображение некорректное было см. .form label*/
 }
 .form form {
     display: grid;
@@ -105,6 +117,7 @@ button {
 .form label {
     font-size: 18px;
     font-weight: 600;
+    /* margin-bottom: 20px; убрал  см. .form group */
 }
 .form input {
     font-size: 18px;
@@ -113,6 +126,7 @@ button {
     padding: 0px 20px 0px 20px;
     border-radius: 15px;
     border: none;
+    outline: none;
 }
 .form select {
     font-size: 18px;
@@ -121,6 +135,7 @@ button {
     padding: 0px 20px 0px 20px;
     border-radius: 15px;
     border: none;
+    outline: none;
 }
 .form__submit {
     font-size: 18px;
@@ -140,12 +155,14 @@ button:hover {
 }
 footer {
     padding: 90px 20px 90px 20px;
+    font-size: 16px;
+    font-weight: 600;
 }
 .footer__container {
     display: flex;
     justify-content: center;    
 }
-.footer__copyright p {
+.footer__copyright {
     margin-top: 40px;
     text-align: center;
     opacity: 0.5;
@@ -153,13 +170,127 @@ footer {
 .footer__group {
     margin-right: 80px;
 }
-.footer__container h3 {
-    size: 30px;
+footer h3 {
+    font-size: 16px;
     opacity: 0.7;
     margin-bottom: 30px;
 }
-.footer__links a {
+.footer__links {
     display: flex;
     flex-direction: column;
+}
+.footer__links a {    
     margin-bottom: 15px;
+}
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 720px) {
+
+    header {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .header__logo {
+        height: 20px;
+    }
+    header a {
+        margin-right: 20px;
+    }
+
+    .about {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .about h1 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    .form {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .form h1 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+    .about__image {
+        width: 280px;
+    }
+    .about__sun-image {
+        width: 75px;
+        height: 75px;
+    }
+    footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 320px) {
+    
+    header {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .header__logo {
+        height: 20px;
+    }
+    header a {
+        margin-right: 10px;
+    }
+
+    .about {
+        padding: 50px 10px;
+        flex-direction: column;
+    }
+    .about__images {
+        order: 1;
+    }
+    .about__info {
+        order: 2;
+    }
+    .about h1 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    .form {
+        padding: 50px 10px;
+    }
+    .form h1 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+    .about__image {
+        width: 280px;
+    }
+    .about__sun-image {
+        width: 75px;
+        height: 75px;
+    }
+    footer {
+        padding: 50px 10px;
+    }
+    .footer__container {
+        flex-direction: column;
+    }
+}
+
+.animate__animated.animate__fadeInLeft {
+    animation-duration: 2s;
+}
+.animate__animated.animate__fadeInRight {
+    animation-duration: 2s;
+}
+
+.header__controls {
+    display: flex;
+    align-items: center;
 }
